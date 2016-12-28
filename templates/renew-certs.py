@@ -48,3 +48,7 @@ for cert in certs:
         with open('{{ letsencrypt_intermediate_cert }}', 'r') as intermediate_cert:
             f.write(intermediate_cert.read())
         f.close()
+:
+            chained_crt.write(output)
+            with open('{{ letsencrypt_intermediate_cert_path }}', 'r') as intermediate_cert:
+                chained_crt.write(intermediate_cert.read())
